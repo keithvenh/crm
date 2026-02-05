@@ -1,0 +1,17 @@
+.rolodex {
+  width: 50vw;
+  box-sizing: border-box;
+  border: 12px solid #666;
+  height: 100vh;
+}
+
+.profile {
+  width: 50vw;
+  box-sizing: border-box;
+  border: 12px solid #666;
+  height: 100vh;
+}
+
+.data {
+  display: flex;
+}

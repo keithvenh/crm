@@ -1,0 +1,24 @@
+.Card {
+  height: 7vw;
+  width: 10vw;
+  background-color: #fafaef;
+  color: #333;
+  text-align: left;
+}
+
+.Card .title {
+  border-bottom: 1px solid #fa7777;
+  padding-top: 4px;
+  padding-left: 4px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: serif, monospace;
+  
+}
+
+.Card .synopsis {
+  font-family: sans-serif, serif;
+  font-size: 14px;
+  padding: 6px;
+}
+
