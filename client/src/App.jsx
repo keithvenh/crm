@@ -1,11 +1,27 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import {fetchAll} from './services/fetchAll';
+import {FamiliesService} from './services/familiesService';
+
+
+// ===== COMPONENTS ===== //
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+
+// ===== PAGES ===== //
+import Dashboard from './pages/Dashboard';
 import Families from './pages/Families'
 
 function App() {
+
+  const [page, setPage] = useState('Dashboard');
+
+  const pages = {
+    '/': <Dashboard />,
+    'Dashboard': <Dashboard />,
+    'Families': <Families />
+  }
 
   const [families, setFamilies] = useState([]);
   const [form, setForm] = useState({name: ""});
@@ -112,60 +128,63 @@ function App() {
 
 
   useEffect(() => {
-    fetch("/api/families")
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
+    FamiliesService.all
       .then(setFamilies)
-      .catch((e) => setError(e.message))
+      .catch((e) => setError(e.message));
   }, []);
 
   return (
-    <main>
-      <h1>Raise Your Support | CRM</h1>
-      <h2>Families</h2>
-      <div className="screens">
-        <div className="screen-left">
-          <ul>
-            {families.map((f) => (<li key={f.id} onClick={() => showFamily(f.id)}>{f.name}</li>))}
-          </ul>
-        </div>
-        <div className="screen-right">
-          {subpage === "new" ? (
-            <>
-              <h3>Add a New Family</h3>
-              <form onSubmit={submitNewFamily}>
-                <label>
-                  Family Name
-                  <input onChange={handleInput} value={form.name}></input>
-                </label>
-                <button>Save</button>
-              </form>
-            </>
-          ) : subpage === "show" ? (
-            <>
-              <h3>Family Record</h3>
-              <p>id: {family.id}</p>
-              <p>name: {family.name}</p>
-              <button onClick={editFamily}>Edit Record</button>
-            </>          
-          ) : 
-            <>
-              <h3>Edit Family Record</h3>
-              <form onSubmit={updateFamily}>
-                <label>
-                  Family Name
-                  <input onChange={handleInput} value={form.name}></input>
-                </label>
-                <button>Save</button>
-              </form>
-              <button onClick={deleteFamily}>Delete Record</button>
-            </>
-          }
-        </div>
+    <>
+      <Header setPage={setPage} page={page} />
+      <div className='mainContainer'>
+        <Sidebar page={page} setPage={setPage} />
+        {pages[page]}
+        <main>
+          <h2>Families</h2>
+          <div className="screens">
+            <div className="screen-left">
+              <ul>
+                {families.map((f) => (<li key={f.id} onClick={() => showFamily(f.id)}>{f.name}</li>))}
+              </ul>
+            </div>
+            <div className="screen-right">
+              {subpage === "new" ? (
+                <>
+                  <h3>Add a New Family</h3>
+                  <form onSubmit={submitNewFamily}>
+                    <label>
+                      Family Name
+                      <input onChange={handleInput} value={form.name}></input>
+                    </label>
+                    <button>Save</button>
+                  </form>
+                </>
+              ) : subpage === "show" ? (
+                <>
+                  <h3>Family Record</h3>
+                  <p>id: {family.id}</p>
+                  <p>name: {family.name}</p>
+                  <button onClick={editFamily}>Edit Record</button>
+                </>          
+              ) : 
+                <>
+                  <h3>Edit Family Record</h3>
+                  <form onSubmit={updateFamily}>
+                    <label>
+                      Family Name
+                      <input onChange={handleInput} value={form.name}></input>
+                    </label>
+                    <button>Save</button>
+                  </form>
+                  <button onClick={deleteFamily}>Delete Record</button>
+                </>
+              }
+            </div>
+          </div>
+        </main>
       </div>
-    </main>
+      <footer></footer>
+    </>
   )
 }
 

@@ -26,19 +26,21 @@ export default function Families() {
 
   if(error) {return <div>Error: {error}</div>}
 
+  let letter = "";
   return (
     <section className="Families">
-      <div className='data'>
-        <div className="rolodex">
-          <PageHeader pageTitle={subpage} />
-          {families.length === 0 ? 
-            (<p>None Yet</p>) :
-            (families.map((f) => (<Card key={f.id} content={{title: f.name, synopsis: "Synopsis Empty"}} />)))
+      <div className='alphabet'>
+        {families.map((f) => {
+          if(f.name.split("")[0] !== letter) {
+            letter = f.name.split("")[0];
+            return <li key={letter}>{letter}</li>
           }
-        </div>
-        <div className="profile">
-          {subpages[subpage]}
-        </div>
+        })}
+      </div>
+      <div className='data'>
+        <ul>
+          {families.map((f) => (<li key={f.id} onClick={() => showFamily(f.id)}>{f.name}</li>))}
+        </ul>
       </div>
     </section>
   )

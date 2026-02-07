@@ -1,22 +1,32 @@
 .Header {
-  border: 1px solid red;
+  background-color: #191919;  
+  box-sizing: border-box;
+  border-bottom: 1px solid #222;
+  padding-left: 12px;
+  padding-right: 12px;
+  
   height: 7vh;
   width: 100vw;
-  box-sizing: border-box;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .Header div {
+  width: 20%;
+  box-sizing: border-box;
+}
 
+.appTitle {
+  cursor: pointer;
 }
 
 .titleBar {
   border-radius: 3px;
   height: 50%;
   width: 20vw;
-  background-color: #666;
+  background-color: #333;
   text-align: center;
   font-size: 12px;
   display: flex;
