@@ -1,0 +1,26 @@
+.Header {
+  border: 1px solid red;
+  height: 7vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header div {
+
+}
+
+.titleBar {
+  border-radius: 3px;
+  height: 50%;
+  width: 20vw;
+  background-color: #666;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

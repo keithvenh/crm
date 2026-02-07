@@ -1,3 +1,12 @@
-body {
-  background-color: #333;
+.screens {
+  display: flex;
+  border: 1px solid #00dd00;
+}
+
+.screen-left {
+  border: 1px solid #00dd00;
+}
+
+.screen-right {
+  border: 1px solid #00dd00;
 }

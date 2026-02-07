@@ -9,6 +9,7 @@ router.get('/', (req,res) => {
 })
 
 router.post('/', (req, res) => {
+  console.log(req);
   const name = req.body?.name;
   if(!name || String(name).trim() === "") {
     return res.status(400).json({error: "name is required" })

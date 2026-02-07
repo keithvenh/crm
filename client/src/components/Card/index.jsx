@@ -7,7 +7,6 @@ export default function Card({content}) {
   return (
     <div className="Card">
       <div className="title">{title}</div>
-      <div className="synopsis">{synopsis}</div>
     </div>
   )
 }

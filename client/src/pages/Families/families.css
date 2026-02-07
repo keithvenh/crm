@@ -1,17 +1,26 @@
-.rolodex {
-  width: 50vw;
+.Families {
+  height: 93vh;
+  width: 90vw;
   box-sizing: border-box;
-  border: 12px solid #666;
-  height: 100vh;
-}
-
-.profile {
-  width: 50vw;
-  box-sizing: border-box;
-  border: 12px solid #666;
-  height: 100vh;
+  border: 1px solid yellow;
 }
 
 .data {
   display: flex;
+  height: 90vh;
+  width: 100%;
+}
+
+.rolodex {
+  width: 50%;
+  box-sizing: border-box;
+  border: 12px solid #666;
+  height: 100%;
+}
+
+.profile {
+  width: 50%;
+  box-sizing: border-box;
+  border: 12px solid #666;
+  height: 100%;
 }
