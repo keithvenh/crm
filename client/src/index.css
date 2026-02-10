@@ -3,3 +3,18 @@ body {
   color: #00dd00;
   font-family: monospace, sans-serif;
 }
+
+main {
+  height: 93vh;
+  width: 90vw;
+  box-sizing: border-box;
+}
+
+a {
+  color: #00dddd;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #009999;
+}

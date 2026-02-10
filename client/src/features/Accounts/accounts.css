@@ -1,0 +1,62 @@
+.Accounts {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.pageHeader {
+  width: 100%;
+  background-color: #333;
+  box-sizing: border-box;
+  display: flex;
+  height: 4vh;
+}
+
+.createLink {
+  color: #00dd00;
+  text-transform: uppercase;
+  font-size: 2vh;
+  line-height: 4vh;
+}
+
+.alphaFilter {
+  display: flex;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px dashed #666;
+  height: 4vh;
+  flex-grow: 0;
+}
+
+.alphaFilter li {
+  font-size: 0.9em;
+}
+
+.accountsList {
+  display: flex;
+  border: 1px solid yellow;
+  flex-direction: column;
+  width: 90vw;
+  flex-wrap: wrap;
+}
+
+.accountsList li {
+  width: 20vw;
+  border: 1px solid red;
+}
+
+.alphaSeparator {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20vw;
+  flex-shrink: 1;
+}
+
+.alphaSeparator hr {
+  width: 33%;
+  border-color: #00dd00;
+}

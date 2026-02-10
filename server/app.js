@@ -4,9 +4,9 @@ const port = 3000
 
 app.use(express.json());
 
-const familiesRoutes = require('./routes/families');
+const accountRoutes = require('./routes/account');
 
-app.use('/api/families', familiesRoutes);
+app.use('/api/account', accountRoutes);
 
 app.get('/', (req, res) => {
   res.send("Hello, World!")

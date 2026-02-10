@@ -14,15 +14,12 @@ li {
   margin-bottom: 6px;
 }
 
-li:hover {
-  cursor: pointer;
-  color: #009900;
+a {
+  padding-left: 6px;
 }
 
-li.active {
-  background-color: #333;
-}
-
-li.active:before {
-  content: "> ";
+a.active {
+  font-weight: bold;
+  border-left: 3px solid #00dddd;
+  padding-left: 3px;
 }
